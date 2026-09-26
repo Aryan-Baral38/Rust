@@ -26,7 +26,8 @@ fn main() {
         else {println!(", my true love gave to me");}
         let mut count = 0;
         for line in 0..(day + 1) {
-            if count > 0 && count % 3 == 0 {print!("\n");}
+            if count > 3   && count % 3 == 0 {print!("\n");}
+            if count == 3 {print!("\n");}
             count += 1;
             let to_print = lines[day - line];
             if line == day && day != 0 { print!(" and {}", lines[0].to_lowercase()); }
