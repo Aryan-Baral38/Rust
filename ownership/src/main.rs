@@ -1,11 +1,17 @@
-
-fn read(y: bool){
-    if y{
-        println!("y is true");
-    }
+fn main() {
+    let s = String::from("Hello, world");
+    println!("{s} is the string");
+    let first = first_word(&s);
+    println!("{first}");
 }
 
-fn main(){
-    read(x);
-    let x = true;
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+    &s[..]
 }
